@@ -27,7 +27,10 @@ class Settings(BaseSettings):
     refresh_token_expire_days: int = Field(default=7, alias="REFRESH_TOKEN_EXPIRE_DAYS")
 
     # --- CORS ---
-    cors_origins: str = Field(default="http://localhost:5173", alias="CORS_ORIGINS")
+    cors_origins: str = Field(
+    default="http://localhost:5173,http://127.0.0.1:5173",
+    alias="CORS_ORIGINS",
+)
 
     # --- Email (optional in dev) ---
     smtp_host: str | None = Field(default=None, alias="SMTP_HOST")
